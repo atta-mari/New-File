@@ -1,0 +1,30 @@
+﻿@model IList<Sindh_University_Transport_MS.Models.Point>
+
+    @{
+        ViewBag.Title = "";
+        Layout = null;
+    }
+
+    <div class="row">
+        <div style="min-height:400px" class="col-md-12">
+
+
+
+            @foreach (var item in Model)
+            {
+                <div class="row">
+                    <div class="col-md-4">
+
+                        <img src="@Url.Content(item.P_Photo)" width="400px" height="400px" class="img img-responsive img-thumbnail" />
+                    </div>
+                    <div class="col-md-8">
+                        <p class="text-dark"><b>Location:</b> @item.Location.Name </p>
+                        <p class="text-dark"><b>Shift:</b> @item.Shift&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>PointNumber:</b> @item.P_Number</p>
+                        <p class="text-dark"><b>Arival Time:</b> @item.P_S_Timing &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Return Time:</b> @item.P_E_Timing</p>
+                        <p class="text-dark"><b>Route Description:</b> @item.Location.Routes</p>
+                    </div>
+                </div>
+                <hr />
+            }
+        </div>
+    </div>

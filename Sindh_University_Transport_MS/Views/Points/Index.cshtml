@@ -1,0 +1,77 @@
+﻿@model IEnumerable<Sindh_University_Transport_MS.Models.Point>
+
+@{
+    ViewBag.Title = "Index";
+
+}
+
+<h2>Points Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayName("Point ID")
+        </th>
+        <th>
+           @Html.DisplayName("type")
+        </th>
+        <th>
+             @Html.DisplayName("Number")
+        </th>
+        <th>
+           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  @Html.DisplayName("Photo")
+        </th>
+        <th>
+             @Html.DisplayName("Start-Timing")
+        </th>
+        <th>
+             @Html.DisplayName("End-Timing")
+        </th>
+        <th>
+            &nbsp;&nbsp;  @Html.DisplayName("Shift")
+        </th>
+        <th>
+             @Html.DisplayName("Location Name")
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+           @Html.DisplayFor(modelItme =>item.P_Id)
+        </td>
+       
+        <td>
+             @Html.DisplayFor(modelItem => item.P_type)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.P_Number)
+        </td>
+        <td>
+            <img src="@Url.Content(item.P_Photo)" width="100" height="100" />
+        </td>
+        <td>
+           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   @Html.DisplayFor(modelItem => item.P_S_Timing)
+        </td>
+        <td>
+            &nbsp;&nbsp;&nbsp;&nbsp; @Html.DisplayFor(modelItem => item.P_E_Timing)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Shift)
+        </td>
+        <td>
+           &nbsp;&nbsp; @Html.DisplayFor(modelItem => item.Location.Name)
+        </td>
+        <td> 
+            @Html.ActionLink("Edit", "Edit", new { id=item.P_Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.P_Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.P_Id })
+        </td>
+    </tr>
+}
+
+</table>

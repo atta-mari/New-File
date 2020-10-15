@@ -1,0 +1,50 @@
+﻿@using Sindh_University_Transport_MS.Models;
+
+@{
+    ViewBag.Title = "Index";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+
+    <meta name="viewport" content="width=device-width" />
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="~/SidebarDesign/css/style.css">
+
+    <title>Index</title>
+</head>
+<body>
+
+        <!-- Page Content  -->
+        <div id="content" class="p-4 p-md-5">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+    
+                    <p>@Html.ActionLink("Home", "Index", "Home")|@Html.ActionLink("Back to locations", "Locations", new { id = ViewBag.id })</p> 
+                </div>
+               
+              
+
+                
+
+
+
+
+
+            </nav>
+            @{Html.RenderAction("AllPointsPoints");}
+        </div>
+
+   
+    <script src="~/SidebarDesign/js/jquery.min.js"></script>
+    <script src="~/SidebarDesign/js/popper.js"></script>
+    <script src="~/SidebarDesign/js/bootstrap.min.js"></script>
+    <script src="~/SidebarDesign/js/main.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,109 @@
+﻿@using Sindh_University_Transport_MS.Models
+@model IEnumerable<Sindh_University_Transport_MS.Models.City>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+
+    <meta name="viewport" content="width=device-width" />
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="~/SidebarDesign/css/style.css">
+
+    <title>Index</title>
+</head>
+<body>
+    <div style="margin-top:30px" class="wrapper d-flex align-items-stretch">
+        <nav id="sidebar">
+            <div  class="p-4 pt-5">
+
+                <ul class="list-unstyled components mb-5">
+                    <li class="active">
+                        <a>Cities</a>
+                    </li>
+                    @foreach (var item in Model)
+                    {
+                        <li>   @Html.ActionLink(item.Name, "Areas", new { id = item.Id })</li>
+
+
+                    }
+                    
+                </ul>
+
+            </div>
+        </nav>
+       
+        <div id="content" class="p-4 p-md-5">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+                    <button type="button" id="sidebarCollapse" class="btn btn-primary">
+                        <i class="fa fa-bars"></i>
+                        <span class="sr-only">Toggle Menu</span>
+                    </button>
+                    <div style="margin-right:200px">
+                        <a href="#" id="home">Home</a> |
+                        <a href="#" id="link">About us</a>
+
+                    </div>
+          </div>
+                <div class="container-fluid">
+                    
+                    @using (Html.BeginForm("Index", "Home"))
+                    {
+                       
+                        <div class="row">
+                            <div class="col-md-8">
+                                <input style="border-radius: 6px 5px;" width="12px" name="search" class="form-control" type="text" placeholder="Search with Location">
+                            </div>
+                            <div class="col-md-3">
+                                <button class="btn badge-primary img-circle">Search</button>
+                            </div>
+                        </div>    
+                    }
+
+                </div>
+
+
+</nav>
+            <div id="aboutus">
+
+                @{ Html.RenderAction("AboutUS");}
+            </div>
+            <div id="allpoints">
+
+                @{Html.RenderAction("AllPoints");}
+            </div>
+        </div>
+
+    </div>
+       <script src="~/SidebarDesign/js/jquery.min.js"></script>
+    <script src="~/SidebarDesign/js/popper.js"></script>
+    <script src="~/SidebarDesign/js/bootstrap.min.js"></script>
+    <script src="~/SidebarDesign/js/main.js"></script>
+         
+</body>
+
+</html>
+<script>
+    $(window).on('load', function () {
+        $("#aboutus").hide();
+    });
+    
+    $("#link").click(function () {
+
+        $("#aboutus").show();
+        $("#allpoints").hide();
+    })
+    $("#home").click(function () {
+
+        $("#aboutus").hide();
+        $("#allpoints").show();
+    })
+</script>

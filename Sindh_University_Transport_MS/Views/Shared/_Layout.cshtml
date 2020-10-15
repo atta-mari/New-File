@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+  
+
+    <link href="~/Content/css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+        .divmargin{
+            margin-top:30px;
+        }
+        .divdesign{
+            
+            color:white;
+            min-height:30px;
+            font-size:20px;
+            border-radius: 3px 4px;
+        }
+        .clr{
+           width:300px;
+        }
+    </style>
+
+</head>
+<body>
+
+    
+    
+
+    <div class="container">
+        
+        <i class=""></i>
+                <div class="row divmargin">
+                    <div class="col-md-12 img-rounded" style="background-color:skyblue">
+                        <ul class="nav nav-pills nav-justified">
+                            <li class="active">@Html.ActionLink(" Admin Profile", "Index", "Admin",null, new { @class = "glyphicon glyphicon-user", style = "color:white" })</li>
+                            <li ><a href="@Url.Action("Index", "Cities")" style="color:white"><img src="~/Content/icon/iconfinder_6_2300997.png" style="margin-bottom:5px; margin-right:5px;" /> Cities</a></li>
+                            <li><a href="@Url.Action("Index", "Areas")" style="color:white"><img src="~/Content/icon/iconfinder_area-chart_1608513 (1).png" style="margin-bottom:5px; margin-right:5px;" />     Areas</a></li>
+                            <li>@Html.ActionLink(" Locations ", "Index", "Locations",null, new {@class= "glyphicon glyphicon-map-marker", @style = "color:white" })</li>
+                            <li><a href="@Url.Action("Index", "Points")" style="color:white"> <img src="~/Content/icon/iconfinder_aiga_bus_134180.png" style="margin-bottom:5px; margin-right:5px;" />Points</a></li>
+                        </ul>
+                           
+                         
+                        </div>
+                    </div>
+               
+                <br />
+                @RenderBody()
+                <hr />
+                <footer></footer>
+            </div>
+
+    <script src="~/Scripts/js/bootstrap.min.js"></script>
+</body>
+</html>

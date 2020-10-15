@@ -1,0 +1,76 @@
+﻿@model Sindh_University_Transport_MS.Models.Point
+
+@{
+    ViewBag.Title = "Details";
+
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Point</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        
+        <dt>
+            @Html.DisplayName("Point Type")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.P_type)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Number")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.P_Number)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Photo")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.P_Photo)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Starting Time")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.P_S_Timing)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Ending Time")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.P_E_Timing)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Shift)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Shift)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Loation Name")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Location.Name)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.P_Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
